@@ -92,7 +92,58 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 create another file in `src` called `App.js` and `App.css`
 
+current project structure:
+```
+.
++-- public
+| +-- index.html
++-- src
+| +-- App.css
+| +-- App.js
+| +-- index.js
++-- .babelrc
++-- .gitignore
++-- package-lock.json
++-- package.json
++-- webpack.config.js
+```
 
+We now have a functioning react app! We can start our dev server by executing `webpack-dev-server --mode development` in the terminal. I would advise putting it in your `start` script in `package.json` to save yourself nine whole keystrokes.
+
+### FIXING ON ERROR
+
+I found some error while working on this.
+
+1. On my first attempt executing this command:
+```
+$ webpack-dev-server --mode development
+```
+
+I got error says:
+```
+-bash: webpack-dev-server: command not found
+```
+
+My solution is to reinstall `webpack-dev-server` with `-g` option for global.
+```
+npm install webpack-dev-server -g
+```
+
+2. On the first run of `webpack-dev-server`, I found another error.
+```
+internal/modules/cjs/loader.js:613
+    throw err;
+    ^
+
+Error: Cannot find module 'webpack'
+```
+
+My solution is to link webpack
+```
+npm link webpack
+```
+
+After all is done, I can browse my React App on `localhost:3000`
 
 
 ### References
