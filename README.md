@@ -152,6 +152,11 @@ This is not important but I found that the curl command is quick to test my runn
 curl -i localhost:5000
 ```
 
+### Running My React App 
+To run my react app, go to project folder and run:
+```
+npm run start
+```
 
 ### References
 
