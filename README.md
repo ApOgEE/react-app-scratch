@@ -145,6 +145,13 @@ npm link webpack
 
 After all is done, I can browse my React App on `localhost:3000`
 
+### Browsing using CURL
+
+This is not important but I found that the curl command is quick to test my running server on terminal. Here is my simple `curl` command
+```
+curl -i localhost:5000
+```
+
 
 ### References
 
