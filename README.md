@@ -73,6 +73,27 @@ Finally, since we want to use [Hot Module Replacement](https://webpack.js.org/gu
 
 We’re done with the heavy setup. Now let’s get React working!
 
+### React
+
+First, we’ll need to get two more packages: `react` and `react-dom`. Go ahead and save those as regular dependencies.
+
+```
+npm install --save react react-dom
+```
+
+We’ll need to tell our React app where to hook into the DOM (in our `index.html`). Create a file called `index.js` in your `src` directory. This is a very small file that does a lot in terms of your React app. Check it out.
+
+```
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.js";
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+create another file in `src` called `App.js` and `App.css`
+
+
+
 
 ### References
 
