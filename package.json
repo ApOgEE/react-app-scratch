@@ -1,0 +1,11 @@
+{
+  "name": "apo-react",
+  "version": "1.0.0",
+  "description": "apogee react example",
+  "main": "index.js",
+  "scripts": {
+    "test": "cuba"
+  },
+  "author": "",
+  "license": "ISC"
+}
