@@ -54,6 +54,24 @@ In the project root, create a file called `.babelrc`. Here, we’re telling babe
 
 Babel also has a ton of plugins available that can be used if you only need to transform specific features or some feature you need isn’t covered by `env`. We won’t worry about those for now, but you can check them out [here](https://babeljs.io/docs/plugins/).
 
+### Webpack
+Now we need to acquire and configure Webpack. We’ll need a few more packages, and you’ll want to save these as dev dependencies: 
+
+```
+npm install --save-dev webpack webpack-cli webpack-dev-server style-loader css-loader babel-loader
+```
+
+Webpack uses [loaders](https://webpack.js.org/loaders/) to process different types of files for bundling. It also works easily alongside the development server that we’re going to use to serve our React project in development and reload browser pages on (saved) changes to our React components. In order to utilize any of this though, we’ll need to configure Webpack to use our loaders and prepare the dev server.
+
+Create a new file at the root of the project called `webpack.config.js`. This file exports an object with webpack’s configuration.
+
+We set up `webpack-dev-server` in the devServer property. This doesn’t require much for our needs — just the location we’re serving static files from (such as our index.html) and the port we want to run the server on. Note that `devServer` also has a `publicPath` property. This `publicPath` tells the server where our bundled code actually is.
+
+That last bit might have been a little confusing — Pay really close attention here: `output.publicPath` and `devServer.publicPath` are different. Read both entries. Twice.
+
+Finally, since we want to use [Hot Module Replacement](https://webpack.js.org/guides/hot-module-replacement/) so we don’t have to constantly refresh to see our changes. All we do for that in terms of this file is instantiate a new instance of the plugin in the [plugins](https://webpack.js.org/configuration/plugins/) property and make sure that we set `hotOnly` to `true` in `devServer`. We still need to set up one more thing in React before HMR works, though.
+
+We’re done with the heavy setup. Now let’s get React working!
 
 
 ### References
